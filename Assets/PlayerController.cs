@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public float speed; 
-
+    public float speed;
 
     private Rigidbody rb;
-
-    private void Start()
+    void Start ()
     {
         rb = GetComponent<Rigidbody>();
     }
-    private void FixedUpdate()
+
+     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        rb.AddForce(movement * speed);
-        
+        rb.AddForce (movement * speed);
     }
 }
+
+
